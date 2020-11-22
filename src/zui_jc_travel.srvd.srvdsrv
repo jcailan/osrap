@@ -2,7 +2,7 @@
 define service ZUI_JC_Travel {
   expose ZC_JC_Travel as Travel;
   expose ZC_JC_Booking as Booking;
-  expose /DMO/I_Agency as Agency;
+  expose zce_jc_agency as Agency;
   expose /DMO/I_Customer as Customer;
   expose /DMO/I_Flight as Flight;
   expose /DMO/I_Carrier as Carrier;
