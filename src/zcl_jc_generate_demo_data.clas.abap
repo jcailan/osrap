@@ -11,7 +11,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_jc_generate_demo_data IMPLEMENTATION.
+CLASS ZCL_JC_GENERATE_DEMO_DATA IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
     " delete existing entries in the database table
     DELETE FROM zjc_atrav.
@@ -71,5 +73,4 @@ CLASS zcl_jc_generate_demo_data IMPLEMENTATION.
 
     out->write( 'Travel and booking demo data inserted.').
   ENDMETHOD.
-
 ENDCLASS.

@@ -485,8 +485,8 @@ CLASS lhc_Travel IMPLEMENTATION.
           update_granted = is_update_granted( has_before_image = has_before_image  overall_status = travel_before_image-overall_status ).
           IF update_granted = abap_false.
             APPEND VALUE #( %tky        = travel-%tky
-                            %msg        = NEW zcm_rap_2503( severity = if_abap_behv_message=>severity-error
-                                                            textid   = zcm_rap_2503=>unauthorized )
+                            %msg        = NEW zcm_jc_msg( severity = if_abap_behv_message=>severity-error
+                                                            textid   = zcm_jc_msg=>unauthorized )
                           ) TO reported-travel.
           ENDIF.
           " Creation of a new record -> check create authorization
@@ -494,8 +494,8 @@ CLASS lhc_Travel IMPLEMENTATION.
           update_granted = is_create_granted( ).
           IF update_granted = abap_false.
             APPEND VALUE #( %tky        = travel-%tky
-                            %msg        = NEW zcm_rap_2503( severity = if_abap_behv_message=>severity-error
-                                                            textid   = zcm_rap_2503=>unauthorized )
+                            %msg        = NEW zcm_jc_msg( severity = if_abap_behv_message=>severity-error
+                                                            textid   = zcm_jc_msg=>unauthorized )
                           ) TO reported-travel.
           ENDIF.
         ENDIF.
@@ -505,8 +505,8 @@ CLASS lhc_Travel IMPLEMENTATION.
         delete_granted = is_delete_granted( has_before_image = has_before_image  overall_status = travel_before_image-overall_status ).
         IF delete_granted = abap_false.
           APPEND VALUE #( %tky        = travel-%tky
-                          %msg        = NEW zcm_rap_2503( severity = if_abap_behv_message=>severity-error
-                                                          textid   = zcm_rap_2503=>unauthorized )
+                          %msg        = NEW zcm_jc_msg( severity = if_abap_behv_message=>severity-error
+                                                          textid   = zcm_jc_msg=>unauthorized )
                         ) TO reported-travel.
         ENDIF.
       ENDIF.

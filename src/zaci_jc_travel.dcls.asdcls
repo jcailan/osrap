@@ -1,0 +1,16 @@
+@EndUserText.label: 'Access Control for Travel'
+@MappingRole: true
+define role ZACI_JC_TRAVEL {
+    grant
+        select
+            on
+                ZI_JC_TRAVEL
+                    where
+                        CurrencyCode = 'EUR'
+                        and
+                        ( TravelStatus ) = aspect pfcg_auth(ZJC_OSTAT, ZJC_OSTAT, ACTVT = '03' )
+                        or
+                        true // work-around because of ABAP environment trial restrictions
+                        ;
+                        
+}

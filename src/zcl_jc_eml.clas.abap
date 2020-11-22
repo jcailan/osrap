@@ -11,7 +11,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_jc_eml IMPLEMENTATION.
+CLASS ZCL_JC_EML IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
 
     DATA my_data TYPE STANDARD TABLE OF zc_jc_travel.
@@ -145,5 +147,4 @@ LocalLastChangedAt ='20200731221539.0000000 '  )
 
 
   ENDMETHOD.
-
 ENDCLASS.
